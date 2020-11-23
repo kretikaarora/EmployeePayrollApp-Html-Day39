@@ -13,20 +13,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             textError.textContent = e;
         }
     });
-
-    const date = document.querySelector('#date');
-    var dateError = document.querySelector('.date-error');
-    date.addEventListener('input', function() {
-        let startDate = getInputValueById('#day')+" "+getInputValueById('#month')+" "+
-                      getInputValueById('#year') ;
-        try {
-            (new EmployeePayRoll()).startDate = new Date(Date.parse(startDate));
-            dateError.textContent = "";
-        } catch (e) {
-            dateError.textContent = e;
-        }
-    });
-
+    
+    //uc2 validting salary
     var salary = document.querySelector('#salary');
     var output = document.querySelector('.salary-output');
     output.textContent = salary.value;
@@ -34,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         output.textContent = salary.value;
     });
 
-    
+    // uc2 validating date 
     var day = document.querySelector('#day');
     var month = document.querySelector('#month');
     var year = document.querySelector('#year');
@@ -65,7 +53,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
-
 
 //defining the save method for saving all emp details
 //this save method was already declared in the form onsubmit="save()";
