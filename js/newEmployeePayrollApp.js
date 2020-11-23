@@ -1,3 +1,4 @@
+//event listener basically waits for an event to occour
 window.addEventListener('DOMContentLoaded', (event) => {
     //uc2- validating name
     var name = document.querySelector('#name');
@@ -146,4 +147,43 @@ function createAndUpdateStorage(employeePayrollData){
     //converting object back to json string format
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 } 
+
+//uc5 reset button which is being called by the form 
+//we are either setting or unsetting the values to empty or some specific value
+const resetForm = () =>
+{ 
+    setValue('#name',''); 
+    unsetSelectedValues('[name=profile]'); 
+    unsetSelectedValues('[name=gender]'); 
+    unsetSelectedValues('[name=department]'); 
+    setValue('#salary', ' '); 
+    setValue('#notes',' ');
+    setValue('#date','--Select Day--');
+    setValue('#month','--Select Month--');
+    setValue('#year','--Select Year--');
+}
+ 
+//uc4 called from reset form func
+const unsetSelectedValues = (propertyValue) => 
+{ 
+    let allItems = document.querySelectorAll(propertyValue); 
+    allItems.forEach(item => { item.checked = false; }
+        );
+} 
+  
+//uc4-called from reset form func
+const setTextValue = (id, value) => 
+{
+    //setting the by extracting through id
+    const element = document.querySelector(id); 
+    element.textContent = value; 
+} 
+
+//uc4 called from reset form func
+const setValue = (id, value) =>
+{
+    const element = document.querySelector(id);
+    element.value = value; 
+}
+
 
