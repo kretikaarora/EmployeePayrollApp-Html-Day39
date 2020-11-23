@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+    //uc2 validating name
     var name = document.querySelector('#name');
     var textError = document.querySelector('.text-error');
     name.addEventListener('input', function(){
@@ -14,19 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    const date = document.querySelector('#date');
-    var dateError = document.querySelector('.date-error');
-    date.addEventListener('input', function() {
-        let startDate = getInputValueById('#day')+" "+getInputValueById('#month')+" "+
-                      getInputValueById('#year') ;
-        try {
-            (new EmployeePayRoll()).startDate = new Date(Date.parse(startDate));
-            dateError.textContent = "";
-        } catch (e) {
-            dateError.textContent = e;
-        }
-    });
-
+    //uc2 validating salary
     var salary = document.querySelector('#salary');
     var output = document.querySelector('.salary-output');
     output.textContent = salary.value;
@@ -34,7 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         output.textContent = salary.value;
     });
 
-    
+    // uc2 validating date
     var day = document.querySelector('#day');
     var month = document.querySelector('#month');
     var year = document.querySelector('#year');
