@@ -88,7 +88,7 @@ const save = ()=>{
     let startDate = getInputValueById('#day')+" "+getInputValueById('#month')+" "+
                       getInputValueById('#year') ;
         try {
-            (new EmployeePayRoll()).startDate = new Date(startDate);
+             employeePayrollData.startDate=new Date(startDate);
         } catch (e) {
             setTextValue('.date-error', e);
         }
