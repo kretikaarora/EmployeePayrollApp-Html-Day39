@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             textError.textContent = e;
         }
     });
-
     //uc2 validating salary
     var salary = document.querySelector('#salary');
     var output = document.querySelector('.salary-output');
@@ -23,6 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function(){
         output.textContent = salary.value;
     });  
+  
+    // uc2 validating date 
     var day = document.querySelector('#day');
     var month = document.querySelector('#month');
     var year = document.querySelector('#year');
@@ -55,6 +56,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // uc3 - defining the save method for saving all emp details
+//defining the save method for saving all emp details
+
 //this save method was already declared in the form onsubmit="save()";
 const save = ()=>{ 
     try{
@@ -112,13 +115,6 @@ const getSelectedValues = (propertyValue) =>
             sellItems.push(item.value);
         });
         return sellItems;
-    }
-
-//function called by createemployeepayroll to get single value by id     
-const getInputValueById=(id)=>
-    {
-        let value=document.querySelector(id).value;
-        return value;
     }
 
 // this method id not used anywhere just could be a replacement for above method 
@@ -185,5 +181,4 @@ const setValue = (id, value) =>
     const element = document.querySelector(id);
     element.value = value; 
 }
-
 
