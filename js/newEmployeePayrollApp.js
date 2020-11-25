@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+    //uc2 validating name
     var name = document.querySelector('#name');
     var textError = document.querySelector('.text-error');
     name.addEventListener('input', function(){
@@ -21,7 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function(){
         output.textContent = salary.value;
     });
-
+  
     // uc2 validating date 
     var day = document.querySelector('#day');
     var month = document.querySelector('#month');
@@ -113,16 +114,4 @@ const getSelectedValues = (propertyValue) =>
         return sellItems;
     }
 
-//function called by createemployeepayroll to get single value by id     
-const getInputValueById=(id)=>
-    {
-        let value=document.querySelector(id).value;
-        return value;
-    }
 
-// this method id not used anywhere just could be a replacement for above method 
-const getInputElementValue = (id) =>
-    {
-        let value = document.getElementById(id).value;
-        return value; 
-    }    
