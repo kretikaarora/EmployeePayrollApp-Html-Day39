@@ -53,18 +53,13 @@ class EmployeePayRoll
    }
 
    get startDate() { return this._startDate; }
-   set startDate(startDate) { 
-    //date func will provide todays date
-    let now = new Date();
-    //if it is a future date it will throw erroe
-    if (startDate > now) throw 'Start Date is a Future Date!';
-    //abs return absolute value of a function
-    var diff = Math.abs(now.getTime() - startDate.getTime());
-    console.log(diff);
-    //converting into proper day format of max 30 days
-    if (diff / (1000 * 60 * 60 * 24) > 30) 
-      throw 'Start Date is beyond 30 Days!';
-    this._startDate = startDate; 
-  }
+   set startDate(startDate) {
+       let currentDAte = new Date();
+       if (Date.parse(currentDAte) - startDate >= 0) {
+           this._startDate = startDate;
+       } else {
+           throw 'Invalid Date';
+       }
+   }
    
 }

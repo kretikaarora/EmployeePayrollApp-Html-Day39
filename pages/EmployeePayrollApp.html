@@ -86,8 +86,9 @@
             </div> 
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date </label>
-                <div>
-                    <select name="day" id="Day">
+                <div id='date'>                    
+                    <select name="Day" id="day">
+                    <option value="">--Select Day--</option>
                     <option vlue="1">1</option>
                     <option vlue="2">2</option>
                     <option value="3">3</option> 
@@ -122,6 +123,7 @@
                     </select>
 
                     <select id="month" name="Month">
+                    <option value="">--Select Month--</option>
                     <option value="Jan">January</option>
                     <option value="Feb">Febuary</option>
                     <option value="March">March</option>
@@ -137,6 +139,7 @@
                     </select>
 
                     <select id="year" name="Year">
+                    <option value="">--Select Year--</option>
                     <option value="2020">2020</option>
                     <option valne="2019">2019</option>
                     <option value="2018">2018</option> 
@@ -145,7 +148,8 @@
                     <option value="2015">2015</option> 
                     <option value="2014">2014</option> 
                     </select>
-                </div>              
+                </div>  
+                <error-output class="date-error" for="startDate"></error-output>            
             </div> 
             <div class="row-content">
                 <label for="notes">Notes</label>
@@ -158,9 +162,10 @@
                     <button  class="button submitButton" type="submit" id="submitButton">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
                 </div>   
-            </div>                     
-        </form>
-        <script src="..\js\EmployeePayrollApp.js"></script>  
-    </div> 
-    </body>
+            </div>                                   
+        </form>     
+        <script src="..\js\EmployeePayrollApp.js"></script> 
+        <script src="..\js\newEmployeePayrollApp.js"></script>  
+        </div>   
+       </body>  
 </html>
