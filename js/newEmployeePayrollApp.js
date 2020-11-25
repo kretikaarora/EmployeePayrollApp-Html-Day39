@@ -22,6 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function(){
         output.textContent = salary.value;
     });  
+  
+    // uc2 validating date 
     var day = document.querySelector('#day');
     var month = document.querySelector('#month');
     var year = document.querySelector('#year');
@@ -54,6 +56,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // uc3 - defining the save method for saving all emp details
+//defining the save method for saving all emp details
 //this save method was already declared in the form onsubmit="save()";
 const save = ()=>{ 
     try{
@@ -113,13 +116,6 @@ const getSelectedValues = (propertyValue) =>
         return sellItems;
     }
 
-//function called by createemployeepayroll to get single value by id     
-const getInputValueById=(id)=>
-    {
-        let value=document.querySelector(id).value;
-        return value;
-    }
-
 // this method id not used anywhere just could be a replacement for above method 
 const getInputElementValue = (id) =>
     {
@@ -146,4 +142,3 @@ function createAndUpdateStorage(employeePayrollData){
     //converting object back to json string format
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 } 
-
