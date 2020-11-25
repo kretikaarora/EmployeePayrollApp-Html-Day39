@@ -18,19 +18,7 @@ class EmployeePayRoll
     get profilePic() { return this._profilePic; }
     set profilePic(profilePic) { 
      this._profilePic = profilePic; 
-   }
-
-   toString() {
-    //giving the type of date required
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    //if start date is not in the given datatype it will pass the value undefined to empdate
-    const empDate = !this.startDate ? "undefined" : 
-                    this.startDate;
-    //here in return for start date we are passing empDate as value                
-    return "id=" + this.id + ", name='" + this.name + ", gender='" + this.gender + 
-           ", profilePic='" + this.profilePic + ", department=" + this.department +
-           ", salary=" + this.salary + ", startDate=" + empDate + ", note=" + this.note;
-  }
+    }
 
    get gender() { return this._gender; }
    set gender(gender) { 
@@ -57,9 +45,19 @@ class EmployeePayRoll
        let currentDAte = new Date();
        if (Date.parse(currentDAte) - startDate >= 0) {
            this._startDate = startDate;
-       } else {
+        } else {
            throw 'Invalid Date';
-       }
-   }
-   
+        }
+    }
+    toString() {
+      //giving the type of date required
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      //if start date is not in the given datatype it will pass the value undefined to empdate
+      const empDate = !this.startDate ? "undefined" : 
+                      this.startDate;
+      //here in return for start date we are passing empDate as value                
+      return "id=" + this.id + ", name='" + this.name + ", gender='" + this.gender + 
+             ", profilePic='" + this.profilePic + ", department=" + this.department +
+             ", salary=" + this.salary + ", startDate=" + empDate + ", note=" + this.note;
+    }  
 }
